@@ -14,7 +14,7 @@ namespace ConsoleApp1
             const int width = 3;
             const int height = 3;
 
-            string[,] cells = new string[width, height];
+            string[,] cells = new string[height, width];
 
             Console.WriteLine("Witaj w programie Kółko i Krzyżyk!");
 
@@ -26,7 +26,7 @@ namespace ConsoleApp1
                     bool valid_value = false;
                     while (!valid_value)
                     {
-                        Console.Write("Podaj stan " + ((i * height + j) + 1) + "-ego pola: ");
+                        Console.Write("Podaj stan " + ((i * width + j) + 1) + "-ego pola: ");
                         string new_value = Console.ReadLine();
 
                         if (new_value == "O" || new_value == "X" || new_value == " ")
@@ -50,7 +50,7 @@ namespace ConsoleApp1
                 Console.Write(" ");
                 for (int j = 0; j < width; j++)
                 {
-                    Console.Write(cells[i,j]);
+                    Console.Write(cells[i , j]);
                     if (j != width - 1)
                     {
                         Console.Write(" | ");
@@ -59,8 +59,21 @@ namespace ConsoleApp1
                 Console.Write("\n");
                 if (i != height - 1)
                 {
-                    Console.WriteLine("---+---+---");
+                    for (int k = 0; k < width; k++)
+                    {
+                        string line_pattern = "---";
+                        char joint_char = '+';
+                        if (k == width - 1)
+                        {
+                            Console.Write(line_pattern);
+                        }
+                        else
+                        {
+                            Console.Write(line_pattern + joint_char);
+                        };
+                    }
                 };
+                Console.Write("\n");
             }
             Console.ReadKey(); 
         }
