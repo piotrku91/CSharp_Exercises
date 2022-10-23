@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ex2_7
+namespace ex2_8
 {
     class Program
     {
