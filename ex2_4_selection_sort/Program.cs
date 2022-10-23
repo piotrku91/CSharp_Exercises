@@ -9,14 +9,14 @@ namespace ex2_2
 {
     class Program
     {
-        static void swap_values(ref int a, ref int b)
+        static void SwapValues(ref int a, ref int b)
         {
             int tmp = a;
             a = b;
             b = tmp;
         }
 
-        static void selection_sort(ref int[] array, int array_size)
+        static void SelectionSort(ref int[] array, int array_size)
         {
             for (int i = 0; i < array_size - 1; i++)
             {
@@ -30,7 +30,7 @@ namespace ex2_2
 
                     if (min_index != i)
                     {
-                        swap_values(ref array[i], ref array[min_index]);
+                        SwapValues(ref array[i], ref array[min_index]);
                     }
                 }
 
@@ -53,7 +53,7 @@ namespace ex2_2
 
             if (validation)
             {
-                selection_sort(ref input, array_size);
+                SelectionSort(ref input, array_size);
 
                 for (int i = 0; i < array_size; i++)
                 {

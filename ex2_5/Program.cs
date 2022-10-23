@@ -10,10 +10,16 @@ namespace ex2_5
     class Program
     {
 
-        static float getInput(string operand_name)
+        static float GetInput(string operand_name)
         {
             Console.Write("Podaj operand " + operand_name + ": ");
             return float.Parse(Console.ReadLine());
+        }
+
+        static void GetOperands(out float operand_a, out float operand_b)
+        {
+            operand_a = GetInput("a");
+            operand_b = GetInput("b");
         }
         static void Main(string[] args)
         {
@@ -26,28 +32,29 @@ namespace ex2_5
                 float operand_a = 0;
                 float operand_b = 0;
 
-                operand_a = getInput("a");
-                operand_b = getInput("b");
-
                 switch (operation)
                 {
                     case "+":
                         {
+                            GetOperands(out operand_a, out operand_b);
                             Console.WriteLine(operand_a + operand_b);
                             break;
                         }
                     case "-":
                         {
+                            GetOperands(out operand_a, out operand_b);
                             Console.WriteLine(operand_a + operand_b);
                             break;
                         }
                     case "*":
                         {
+                            GetOperands(out operand_a, out operand_b);
                             Console.WriteLine(operand_a * operand_b);
                             break;
                         }
                     case "/":
                         {
+                            GetOperands(out operand_a, out operand_b);
                             if (operand_b == 0) { Console.WriteLine("Dzielenie przez 0! Błąd"); break; }
                             Console.WriteLine(operand_a / operand_b);
                             break;
@@ -64,13 +71,7 @@ namespace ex2_5
                             break;
                         }
 
-
                 }
-
-
-
-
-
             }
 
         }
