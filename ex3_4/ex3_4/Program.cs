@@ -33,12 +33,10 @@ namespace ex3_4
                         SwapValues(ref array[i], ref array[min_index]);
                     }
                 }
-
             }
         }
         static void Main(string[] args)
         {
-
             int max_count = 0;
             Console.WriteLine("Podaj ilość liczb: ");
 
@@ -58,7 +56,6 @@ namespace ex3_4
                 Console.WriteLine("Podaj liczbę {0}: ", i);
                 validation = validation && int.TryParse(Console.ReadLine(), out input[i]);
             }
-
             Console.Write("\n");
 
             if (validation)
