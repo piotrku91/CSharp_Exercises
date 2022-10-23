@@ -37,7 +37,7 @@ namespace choinka
 
             uint lines = 0;
 
-            Console.Write("Enter size of tree: ");
+            Console.Write("Podaj wysokość choinki:  ");
             if (uint.TryParse(Console.ReadLine(), out lines))
             {
                 DrawTree(lines);
