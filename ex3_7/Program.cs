@@ -17,7 +17,7 @@ namespace ex3_7
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
                 {
-                     if (j % 2 == 0 && matrix[i, j] % 4 == 0)
+                     if (j % 2 == 0 && matrix[i, j] % 4 == 1)
                 {
                     sum += matrix[i, j];
                 }
