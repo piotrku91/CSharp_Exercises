@@ -5,41 +5,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ex3_6
+namespace ex3_7
 {
     class Program
     {
 
-         static int FindSmallest(int[,] matrix)
+         static int FindAndSumNumbersDividedBy4InParityColumns(int[,] matrix)
         {
-            int min = matrix[0,0];
+            int sum = 0;
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
                 {
-                     if (matrix[i,j] < min)
+                     if ((j + 1) % 2 == 0 && matrix[i, j] % 4 == 0)
                 {
-                    min = matrix[i, j];
+                    sum += matrix[i, j];
                 }
                 }
             }
-            return min;
-        }
-
-        static int FindLargest(int[,] matrix)
-        {
-            int max = matrix[0,0];
-            for (int i = 0; i < matrix.GetLength(0); i++)
-            {
-                for (int j = 0; j < matrix.GetLength(1); j++)
-                {
-                     if (matrix[i,j] > max)
-                {
-                    max = matrix[i, j];
-                }
-                }
-            }
-            return max;
+            return sum;
         }
 
         static void FillMatrixByRandom(int[,] matrix)
@@ -56,7 +40,7 @@ namespace ex3_6
 
         static void DrawMatrix(int[,] matrix)
         {
-            for (int i = 0; i < matrix.GetLength(1); i++)
+            for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
                 {
@@ -81,8 +65,8 @@ namespace ex3_6
                 int[,] matrix = new int[input_a, input_b];
                 FillMatrixByRandom(matrix);
                 DrawMatrix(matrix);
-                Console.WriteLine("Minimalna liczba: " + FindSmallest(matrix));
-                Console.WriteLine("Maksymalna liczba: " + FindLargest(matrix));
+                Console.WriteLine("Suma: " + FindAndSumNumbersDividedBy4InParityColumns(matrix));
+                
             }
             else
             {
